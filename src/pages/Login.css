@@ -1,0 +1,9 @@
+.login-container {
+  height: 100%;
+  background: linear-gradient(#57689f, #d4bea9) !important;
+}
+
+.login-content {
+  align-items: center;
+  display: flex;
+}
