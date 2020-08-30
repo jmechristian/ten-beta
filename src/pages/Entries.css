@@ -1,0 +1,10 @@
+.entries-container {
+  height: 100%;
+  background: linear-gradient(#689f7e, #d0c0af) !important;
+}
+
+.entries-content {
+  align-items: start;
+  display: flex;
+  margin-top: 48px;
+}

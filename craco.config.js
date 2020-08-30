@@ -12,6 +12,8 @@ module.exports = {
               '@border-color-base': '#000000',
               '@border-radius-base': '4px',
               '@border-width-base': '2px',
+              '@font-family': 'proxima-nova, sans-serif',
+              '@dropdown-selected-color': '#ffffff',
             },
             javascriptEnabled: true,
           },
