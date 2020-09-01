@@ -1,0 +1,9 @@
+.question {
+  font-family: 'termina', sans-serif;
+  font-size: 16px;
+}
+
+.answer {
+  color: white;
+  font-weight: 600;
+}

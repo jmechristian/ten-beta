@@ -1,7 +1,8 @@
 import React from 'react';
-import { Layout, Space } from 'antd';
+import { Layout, Space, Row } from 'antd';
 import { FileAddFilled } from '@ant-design/icons';
 import Header from '../components/UI/Header';
+import EntryBox from '../components/UI/EntryBox';
 
 import './Entries.css';
 
@@ -16,6 +17,17 @@ const Entries: React.FC = () => {
           size='large'
         >
           <div className='question-text'>Entries</div>
+          <Row gutter={[16, 16]}>
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+            <EntryBox />
+          </Row>
         </Space>
       </Layout.Content>
     </Layout>
