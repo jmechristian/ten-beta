@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Layout, Space, Row, Col, Button, Progress } from 'antd';
 import { Link } from 'react-router-dom';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import FormContext from '../data/FormContext';
 
 import Resentful from '../components/Resentful';
 import Fearful from '../components/Fearful';
@@ -16,10 +17,11 @@ import CheckList from '../components/Checklist';
 import './FormContainer.css';
 
 const FormContainer: React.FC = () => {
+  const formCtx = useContext(FormContext);
   const [current, setCurrent] = useState(0);
 
   const steps = [
-    <Resentful />,
+    <Resentful onSave={formCtx.saveForm} />,
     <Fearful />,
     <Selfish />,
     <Dishonest />,

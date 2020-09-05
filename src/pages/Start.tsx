@@ -9,7 +9,7 @@ const Start: React.FC = () => {
     <Layout className='start-container'>
       <Header url='/entries' icon={<CalendarFilled />} />
       <Layout.Content className='start-content padding-h'>
-        <Space direction='vertical' className='full-width' size='large'>
+        <Space direction='vertical' className='full-width' size='middle'>
           <Row>
             <div className='sub-text'>Step Ten</div>
           </Row>
