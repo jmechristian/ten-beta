@@ -9,7 +9,7 @@ const Start: React.FC = () => {
     <Layout className='start-container'>
       <Header url='/entries' icon={<CalendarFilled />} />
       <Layout.Content className='start-content padding-h'>
-        <Space direction='vertical' className='full-width' size='middle'>
+        <Space direction='vertical' className='full-width' size='large'>
           <Row>
             <div className='sub-text'>Step Ten</div>
           </Row>
@@ -19,6 +19,7 @@ const Start: React.FC = () => {
               promptly admit it.
             </div>
           </Row>
+          <Space direction='vertical' className='full-width' size='large' />
           <Row>
             <Button type='ghost' block href='/inventory'>
               Start Inventory

@@ -8,7 +8,7 @@ import Resentful from '../components/Resentful';
 import Fearful from '../components/Fearful';
 import Selfish from '../components/Selfish';
 import Dishonest from '../components/Dishonest';
-import Obessing from '../components/Obsessing';
+import Obsessing from '../components/Obsessing';
 import Secrets from '../components/Secrets';
 import Harm from '../components/Harm';
 import Kindly from '../components/Kindly';
@@ -22,13 +22,13 @@ const FormContainer: React.FC = () => {
 
   const steps = [
     <Resentful onSave={formCtx.saveForm} />,
-    <Fearful />,
-    <Selfish />,
-    <Dishonest />,
-    <Obessing />,
-    <Secrets />,
-    <Harm />,
-    <Kindly />,
+    <Fearful onSave={formCtx.saveForm} />,
+    <Selfish onSave={formCtx.saveForm} />,
+    <Dishonest onSave={formCtx.saveForm} />,
+    <Obsessing onSave={formCtx.saveForm} />,
+    <Secrets onSave={formCtx.saveForm} />,
+    <Harm onSave={formCtx.saveForm} />,
+    <Kindly onSave={formCtx.saveForm} />,
     <CheckList />,
   ];
 

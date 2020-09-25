@@ -9,16 +9,16 @@
 }
 
 .sub-text {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 16px;
 }
 
 .step-text {
   font-family: termina, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 38px;
-  line-height: 41px;
+  font-size: 42px;
+  line-height: 45px;
 }
