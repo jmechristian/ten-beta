@@ -1,4 +1,6 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import { Layout, Space, Row, Col, Button, Progress } from 'antd';
 import { Link } from 'react-router-dom';
 import { ArrowLeftOutlined } from '@ant-design/icons';
@@ -19,6 +21,8 @@ import './FormContainer.css';
 const FormContainer: React.FC = () => {
   const formCtx = useContext(FormContext);
   const [current, setCurrent] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   const steps = [
     <Resentful onSave={formCtx.saveForm} />,
@@ -40,8 +44,18 @@ const FormContainer: React.FC = () => {
     setCurrent(prevState => prevState - 1);
   };
 
-  const submitHandler = () => {
-    console.log('Done!');
+  const submitHandler = async (event: any) => {
+    event.preventDefault();
+    const submitted = new Date();
+    try {
+      await axios.post('https://step-ten-server.herokuapp.com/api/entries/', {
+        submitted,
+        entry: formCtx.entry,
+        checklist: formCtx.checklist,
+      });
+      formCtx.clearForm();
+      history.push('/entries');
+    } catch (err) {}
   };
 
   return (

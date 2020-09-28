@@ -4,8 +4,12 @@
 }
 
 .start-content {
-  align-items: center;
   display: flex;
+}
+
+.start-items {
+  justify-content: space-between;
+  margin: 36px 0px;
 }
 
 .sub-text {
@@ -13,6 +17,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 16px;
+  margin-bottom: 16px;
 }
 
 .step-text {

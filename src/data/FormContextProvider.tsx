@@ -33,7 +33,28 @@ const FormContextProvider: React.FC = props => {
     setChecklist(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const clearForm = () => {};
+  const clearForm = () => {
+    setEntry({
+      resentful: '',
+      selfish: '',
+      dishonest: '',
+      fearful: '',
+      obsessing: '',
+      secrets: '',
+      harm: '',
+      act: '',
+    });
+    setChecklist({
+      meeting: false,
+      meditated: false,
+      fellowship: false,
+      literature: false,
+      pray: false,
+      sponsor: false,
+      another: false,
+      helped: false,
+    });
+  };
 
   return (
     <FormContext.Provider

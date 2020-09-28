@@ -9,16 +9,22 @@ const Start: React.FC = () => {
     <Layout className='start-container'>
       <Header url='/entries' icon={<CalendarFilled />} />
       <Layout.Content className='start-content padding-h'>
-        <Space direction='vertical' className='full-width' size='large'>
-          <Row>
-            <div className='sub-text'>Step Ten</div>
-          </Row>
-          <Row>
-            <div className='step-text'>
-              Continued to take personal inventory and when we were wrong
-              promptly admit it.
-            </div>
-          </Row>
+        <Space
+          direction='vertical'
+          className='full-width start-items'
+          size='large'
+        >
+          <div>
+            <Row>
+              <div className='sub-text'>Step Ten</div>
+            </Row>
+            <Row>
+              <div className='step-text'>
+                Continued to take personal inventory and when we were wrong
+                promptly admit it.
+              </div>
+            </Row>
+          </div>
           <Space direction='vertical' className='full-width' size='large' />
           <Row>
             <Button type='ghost' block href='/inventory'>
