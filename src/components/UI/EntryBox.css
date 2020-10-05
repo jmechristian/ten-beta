@@ -10,6 +10,7 @@
   font-family: termina, sans-serif;
   font-weight: 700;
   font-size: 18px;
+  text-transform: uppercase;
 }
 
 .day-number {
@@ -17,4 +18,5 @@
   font-weight: 700;
   font-size: 36px;
   line-height: 24px;
+  text-transform: uppercase;
 }

@@ -7,3 +7,11 @@
   align-items: center;
   display: flex;
 }
+
+.ant-progress-text {
+  color: #cacaca !important;
+}
+
+.ant-progress-status-success .ant-progress-text {
+  color: #87d068 !important;
+}

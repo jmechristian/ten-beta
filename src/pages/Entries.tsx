@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Layout, Space, Row } from 'antd';
 import { FileAddFilled } from '@ant-design/icons';
 import Header from '../components/UI/Header';
@@ -6,7 +7,47 @@ import EntryBox from '../components/UI/EntryBox';
 
 import './Entries.css';
 
+interface Entry {
+  entry: {
+    resentful: string;
+    selfish: string;
+    dishonest: string;
+    fearful: string;
+    obsessing: string;
+    secrets: string;
+    harm: string;
+    act: string;
+  };
+  checklist: {
+    meeting: boolean;
+    meditated: boolean;
+    fellowship: boolean;
+    literature: boolean;
+    pray: boolean;
+    sponsor: boolean;
+    another: boolean;
+    helped: boolean;
+  };
+  submitted: Date;
+  id: string;
+}
+
 const Entries: React.FC = () => {
+  const [entries, setEntries] = useState<Entry[]>([]);
+
+  useEffect(() => {
+    const fetchEntries = async () => {
+      try {
+        await axios
+          .get('https://step-ten-server.herokuapp.com/api/entries/all')
+          .then(response => {
+            setEntries(response.data.entries);
+          });
+      } catch (err) {}
+    };
+    fetchEntries();
+  }, []);
+
   return (
     <Layout className='entries-container'>
       <Header url='/start' icon={<FileAddFilled />} />
@@ -18,15 +59,13 @@ const Entries: React.FC = () => {
         >
           <div className='question-text'>Entries</div>
           <Row gutter={[16, 16]}>
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
-            <EntryBox />
+            {entries.length === 0 ? (
+              <p>No Entries</p>
+            ) : (
+              entries.map(ent => (
+                <EntryBox date={ent.submitted} key={ent.id} id={ent.id} />
+              ))
+            )}
           </Row>
         </Space>
       </Layout.Content>

@@ -1,18 +1,30 @@
 import React from 'react';
 import { Col } from 'antd';
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment';
 
 import './EntryBox.css';
 
-const EntryBox: React.FC = () => {
+interface EntryProps {
+  date: Date;
+  id: string;
+}
+
+const EntryBox: React.FC<EntryProps> = props => {
   return (
     <Col xs={8}>
-      <Link to='/entries/eid'>
+      <Link to={`/entries/${props.id}`}>
         <div className='date-box'>
           <div className='inner-box text-center'>
-            <div className='month-day'>AUG</div>
-            <div className='day-number'>21</div>
-            <div className='month-day'>SAT</div>
+            <div className='month-day'>
+              <Moment format='MMM'>{props.date}</Moment>
+            </div>
+            <div className='day-number'>
+              <Moment format='DD'>{props.date}</Moment>
+            </div>
+            <div className='month-day'>
+              <Moment format='ddd'>{props.date}</Moment>
+            </div>
           </div>
         </div>
       </Link>

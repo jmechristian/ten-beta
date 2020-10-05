@@ -1,6 +1,7 @@
 .entries-container {
-  height: 100%;
   background: linear-gradient(#689f7e, #d0c0af) !important;
+  background-repeat: repeat-y;
+  min-height: 100% !important;
 }
 
 .entries-content {
