@@ -28,6 +28,8 @@ export interface Context {
   saveForm: (name: string, value: string) => void;
   updateChecklist: (switchName: string, value: boolean) => void;
   clearForm: () => void;
+  setUsers: (user: any) => void;
+  user: object;
 }
 
 const FormContext = createContext<Context>({
@@ -54,6 +56,8 @@ const FormContext = createContext<Context>({
   saveForm: () => {},
   updateChecklist: () => {},
   clearForm: () => {},
+  setUsers: () => {},
+  user: {},
 });
 
 export default FormContext;

@@ -45,35 +45,33 @@ const Entries: React.FC = () => {
           .then(response => {
             setEntries(response.data.entries);
           });
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
+      setLoading(false);
     };
     fetchEntries();
-    setLoading(false);
   }, []);
 
   return (
     <Layout className='entries-container'>
       <Header url='/start' icon={<FileAddFilled />} />
-      <Spin spinning={loading}>
-        <Layout.Content className='entries-content'>
-          <Space
-            direction='vertical'
-            className='full-width padding-h'
-            size='large'
-          >
-            <div className='question-text'>Entries</div>
+      <Layout.Content className='entries-content'>
+        <Space
+          direction='vertical'
+          className='full-width padding-h'
+          size='large'
+        >
+          <div className='question-text'>Entries</div>
+          <Spin spinning={loading}>
             <Row gutter={[16, 16]}>
-              {entries.length === 0 ? (
-                <p>No Entries</p>
-              ) : (
-                entries.map(ent => (
-                  <EntryBox date={ent.submitted} key={ent.id} id={ent.id} />
-                ))
-              )}
+              {entries.map(ent => (
+                <EntryBox date={ent.submitted} key={ent.id} id={ent.id} />
+              ))}
             </Row>
-          </Space>
-        </Layout.Content>
-      </Spin>
+          </Spin>
+        </Space>
+      </Layout.Content>
     </Layout>
   );
 };

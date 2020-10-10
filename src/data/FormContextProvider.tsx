@@ -56,9 +56,23 @@ const FormContextProvider: React.FC = props => {
     });
   };
 
+  const setUsers = (user: any) => {
+    setUser(user);
+  };
+
+  const [user, setUser] = useState({});
+
   return (
     <FormContext.Provider
-      value={{ entry, checklist, saveForm, updateChecklist, clearForm }}
+      value={{
+        entry,
+        checklist,
+        saveForm,
+        updateChecklist,
+        clearForm,
+        setUsers,
+        user,
+      }}
     >
       {props.children}
     </FormContext.Provider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './pages/Login';
+import Auth from './pages/Auth';
 import Start from './pages/Start';
 import FormContainer from './pages/FormContainer';
 import Entries from './pages/Entries';
@@ -14,7 +14,7 @@ function App() {
       <FormContextProvider>
         <Switch>
           <Route path='/' exact>
-            <Login />
+            <Auth />
           </Route>
           <Route path='/start' exact>
             <Start />
